@@ -1,6 +1,4 @@
-/**
- * Vérifie si deux plages de dates se chevauchent
- */
+
 export function isDateRangeConflicting(
   start1: Date,
   end1: Date,
@@ -10,18 +8,16 @@ export function isDateRangeConflicting(
   return start1 < end2 && start2 < end1;
 }
 
-/**
- * Valide les heures de réservation
- */
+
 export function validateReservationTime(startTime: Date, endTime: Date): string | null {
   const now = new Date();
   
-  // Vérifier que la date de début est dans le futur
+  
   if (startTime <= now) {
     return 'La réservation doit commencer dans le futur';
   }
   
-  // Vérifier que la date de fin est après la date de début
+ 
   if (endTime <= startTime) {
     return 'La date de fin doit être après la date de début';
   }
